@@ -32,7 +32,7 @@ export default function NewConversationModal({ closeModal }) {
       <Modal.Header closeButton>Create Conversation</Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
-          {useContacts.map((contact) => (
+          {contacts.map((contact) => (
             <Form.Group controlId={contact.id} key={contact.id}>
               <Form.Check
                 type="checkbox"
