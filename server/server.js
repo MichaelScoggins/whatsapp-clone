@@ -1,4 +1,9 @@
-const io = require("socket.io")(5000);
+const io = require("socket.io")(5000, {
+  cors: {
+    // for some reason, it will work even without the following line (but won't work without this cors object)
+    origin: "*",
+  },
+});
 
 io.on("connection", (socket) => {
   const id = socket.handshake.query.id;
